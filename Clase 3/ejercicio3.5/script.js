@@ -8,5 +8,4 @@ const minutos = (comparador, m1, m2, m3, m4) => {
 }
 
 const comparador = (a, b, c, d) => {
-    if((a && b && c))
 }
