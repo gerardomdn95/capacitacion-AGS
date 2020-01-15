@@ -3,12 +3,15 @@
 //                     https://swapi.co
 
 const request = require('request');
-request('https://swapi.co/api/people/1/', function(error, response, body){
+let swapi = 'https://swapi.co/api/';
+let people1 = 'people/1/';
+request(swapi + people1, function(error, response, body){
     if(response.statusCode === 200){
         const force = JSON.parse(body);
         //console.log(force.films);
-        const requestFilm = require('requestFilm');
-       
+        const pelis = force.films;
+        const peliss = JSON.parse(pelis.body) ;
+        console.log(peliss);
     } else {
         console.log('La fuerza no lo acompaña');
     }
