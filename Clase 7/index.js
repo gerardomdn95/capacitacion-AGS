@@ -9,11 +9,14 @@ const app = express();
 const PORT = 3000;
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true})
-    .then(() => console.log('Conectado a la BD 🥳'))
-    .catch(() => console.log('Imposible conectarse a la BD ❌'));
+    .then(() => console.log('Conectado a la BD 🔥'))
+    .catch((err) => console.log(err));
 
 // Body obtener JSON
 app.use(bodyParser.json());
+// Parámetros en la URL
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use('/', router);
 
 app.listen(PORT, () => {
