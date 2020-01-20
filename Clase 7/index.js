@@ -14,6 +14,8 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true})
 
 // Body obtener JSON
 app.use(bodyParser.json());
+//Parámetros para el URL, así lo interpreta bien
+app.use(bodyParser.urlencoded({extended: true}));
 app.use('/', router);
 
     app.listen(PORT, () => {
